@@ -67,6 +67,54 @@
     html{
   scroll-behavior:smooth;
     }
+
+    .navbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 30px;
+
+  background:rgba(10,10,15,0.85);
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid #242838;
+}
+
+.logo{
+  font-family:'Orbitron', sans-serif;
+  font-size:26px;
+  color:#ff4d4d;
+  letter-spacing:3px;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  color:#d6d9e5;
+  text-decoration:none;
+  transition:0.2s;
+  font-size:15px;
+}
+
+.nav-links a:hover{
+  color:#ff4d4d;
+}
+
+    .card img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:16px;
+  margin-bottom:20px;
+    }
   </style>
 </head>
 
@@ -80,13 +128,28 @@
 <div class="menu">
 
   <div class="card" onclick="location.href='chapter1.html'">
-    <div class="title">Chapter 1</div>
-    <div class="desc">In the beningging</div>
+
+  <img src="chapter1cover.jpg">
+
+  <div class="title">Chapter 1</div>
+
+  <div class="desc">
+    The beginning of LOE.
   </div>
-  <div class="card" onclick="location.href='chapter2.html'">
-    <div class="title">Chapter 2</div>
-    <div class="desc">Diko na alam idle</div>
+
+  /div>
+    <div class="card" onclick="location.href='chapter2.html'">
+
+  <img src="chapter1cover.jpg">
+
+  <div class="title">Chapter 2</div>
+
+  <div class="desc">
+    The beginning of LOE.
   </div>
+
+  /div>
+
 
   <div class="
     <nav class="navbar">
