@@ -1,11 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>LOE Characters</title>
 
-  
+  <style>
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#1b1f2b;
+      color:#f0f0f0;
+    }
+
+    header{
+      background:#23283a;
+      padding:20px;
+      border-bottom:1px solid #3a425c;
+      position:sticky;
+      top:0;
+    }
+
+    header a{
+      color:#ff7272;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:50px 20px;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:50px;
+    }
+
+    .title h1{
+      font-size:60px;
+      margin-bottom:10px;
+    }
+
+    .title p{
+      color:#b9c1d6;
+    }
+
+    .character-card{
+      background:#2a3045;
+      border:1px solid #404963;
+      border-radius:30px;
+      overflow:hidden;
+      margin-bottom:40px;
+    }
+
+    .banner{
+      height:220px;
+      background:linear-gradient(
+        135deg,
+        #3f4661,
+        #23283a
+      );
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-size:40px;
+      font-weight:bold;
+      letter-spacing:2px;
+    }
+
+    .content{
+      padding:35px;
+    }
+
+    .name{
+      font-size:45px;
+      margin-bottom:10px;
+    }
+
+    .role{
+      color:#ff7272;
+      margin-bottom:30px;
+      font-weight:bold;
+      letter-spacing:1px;
+    }
+
+    .section{
+      margin-top:30px;
+    }
+
+    .section h3{
+      color:#ffffff;
+      margin-bottom:10px;
+      font-size:25px;
+    }
+
+    .section p{
+      color:#d5dbee;
+      line-height:1.8;
+    }
+
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .fact-box{
+      background:#20263a;
+      border:1px solid #39425c;
+      border-radius:20px;
+      padding:20px;
+    }
+
+    .fact-box h4{
+      color:#ff7272;
+      margin-bottom:10px;
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#9ea7bd;
+    }
+
+  </style>
+</head>
+
 <body>
 
 <header>
@@ -13,139 +141,91 @@
 </header>
 
 <div class="container">
-<style>
-<style>
 
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#1b1f2b;
-  color:#f0f0f0;
-}
+  <div class="title">
+    <h1>LOE Characters</h1>
+    <p>Records of individuals shaping worlds and reality itself.</p>
+  </div>
 
-/* HEADER */
+  <div class="character-card">
 
-header{
-  padding:20px;
-  background:#23283a;
-  border-bottom:1px solid #353b52;
-  position:sticky;
-  top:0;
-}
+    <div class="banner">
+      AERO SMITH JR.
+    </div>
 
-/* NAVIGATION */
+    <div class="content">
 
-nav{
-  display:flex;
-  gap:20px;
-}
+      <div class="name">
+        Aero Smith Jr.
+      </div>
 
-a{
-  color:#ff7272;
-  text-decoration:none;
-  font-weight:bold;
-}
+      <div class="role">
+        KING OF EMERALD KINGDOM
+      </div>
 
-a:hover{
-  opacity:0.8;
-}
+      <div class="section">
+        <h3>Overview</h3>
 
-/* HERO */
+        <p>
+          Son of Aero. A master swordsman who became king after recovering the Emerald capable of reviving the princess.
+          His rise transformed him from explorer into ruler of an entire kingdom.
+        </p>
+      </div>
 
-.hero{
-  padding:100px 20px;
-  text-align:center;
-  background:linear-gradient(
-    to bottom,
-    #2a3045,
-    #1b1f2b
-  );
-}
+      <div class="facts">
 
-.hero h1{
-  font-size:70px;
-  margin-bottom:20px;
-  color:#ffffff;
-  letter-spacing:3px;
-}
+        <div class="fact-box">
+          <h4>Weapon</h4>
+          <p>Swordsmanship</p>
+        </div>
 
-/* SECTION */
+        <div class="fact-box">
+          <h4>Kingdom</h4>
+          <p>Emerald Kingdom</p>
+        </div>
 
-.section{
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
+        <div class="fact-box">
+          <h4>Allies</h4>
+          <p>MC, Ken, Wilden, Amber</p>
+        </div>
 
-/* CARDS */
+        <div class="fact-box">
+          <h4>Status</h4>
+          <p>Alive</p>
+        </div>
 
-.card{
-  background:#2a3045;
-  border:1px solid #404963;
-  border-radius:24px;
-  padding:25px;
-  margin-top:20px;
-  transition:0.2s;
-}
+      </div>
 
-.card:hover{
-  transform:translateY(-3px);
-  border-color:#ff7272;
-  box-shadow:0 0 20px rgba(255,114,114,0.15);
-}
+      <div class="section">
+        <h3>Important Events</h3>
 
-/* TITLES */
+        <p>
+          Explored the island of kingdoms with his crew, defeated goblins within the mines,
+          discovered the Emerald hidden within a dragon cave, revived the princess,
+          and inherited the throne after marrying into the royal family.
+        </p>
+      </div>
 
-h1,h2,h3{
-  color:#ffffff;
-}
+      <div class="section">
+        <h3>Bitey Conflict</h3>
 
-/* PARAGRAPHS */
+        <p>
+          During Bitey’s manipulation of Emerald Kingdom, Aero Smith Jr. initially accepted cooperation
+          to protect the kingdom from destruction caused by Evil Franxx.
+          Over time, the kingdom advanced technologically while corruption spread throughout its society.
+        </p>
+      </div>
 
-p{
-  color:#d7dce8;
-  line-height:1.7;
-}
-
-/* FOOTER */
-
-footer{
-  padding:40px;
-  text-align:center;
-  color:#9aa3b5;
-}
-
-</style>
-</head>
-
-  <h1>LOE Characters</h1>
-
-  <div class="card">
-    <h2>Aero Smith Jr.</h2>
-
-    <p><span class="label">Role:</span> King of Emerald Kingdom</p>
-
-    <p><span class="label">Description:</span>
-    Son of Aero. A master swordsman who became king after reviving the princess using the Emerald.
-    </p>
-
-    <p><span class="label">Personality:</span>
-    Calm, capable, and slowly corrupted by power during Bitey’s influence over Emerald Kingdom.
-    </p>
-
-    <p><span class="label">Important Events:</span></p>
-
-    <ul>
-      <li>Explored the island of kingdoms with MC and friends</li>
-      <li>Found the Emerald in the dragon cave</li>
-      <li>Married the princess</li>
-      <li>Became ruler of Emerald Kingdom</li>
-      <li>Defeated Bitey in direct combat once</li>
-    </ul>
+    </div>
 
   </div>
 
 </div>
 
+<footer>
+  League Of Eye Character Archive
+</footer>
+
 </body>
+
 </html>
