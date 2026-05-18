@@ -114,6 +114,25 @@
   transition:0.2s;
     }
 
+    .gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
+  gap:10px;
+}
+
+.img{
+  height:180px;
+  background:#20263a;
+  border-radius:12px;
+  border:1px solid #404963;
+  transition:0.2s;
+}
+
+.img:hover{
+  transform:scale(1.03);
+  border-color:#ff7272;
+}
+    
   </style>
 
 </head>
@@ -136,16 +155,16 @@
   <div class="section">
 
   <h2>Characters</h2>
-  <p>Fanart and visual interpretations of LOE characters.</p>
+  <p>Art gallery of LOE characters.</p>
 
-  <div class="big-grid">
+  <div class="gallery">
 
-    <div class="card"><div class="preview">Image</div></div>
-    <div class="card"><div class="preview">Image</div></div>
-    <div class="card"><div class="preview">Image</div></div>
-    <div class="card"><div class="preview">Image</div></div>
-    <div class="card"><div class="preview">Image</div></div>
-    <div class="card"><div class="preview">Image</div></div>
+    <div class="img"></div>
+    <div class="img"></div>
+    <div class="img"></div>
+    <div class="img"></div>
+    <div class="img"></div>
+    <div class="img"></div>
 
   </div>
 
