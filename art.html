@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOE Art Gallery</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+      color: white;
+    }
+
+    header {
+      padding: 20px;
+      background: #0f0f0f;
+      border-bottom: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    a {
+      color: #00ff99;
+      text-decoration: none;
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #00ff99;
+      font-size: 50px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .image-box {
+      width: 100%;
+      height: 180px;
+      background: #222;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div>LOE Art Gallery</div>
+  <a href="index.html">← Back to Home</a>
+</header>
+
+<div class="container">
+
+  <h1>Art Gallery</h1>
+  <p>All LOE character art, kingdoms, and comic pages will be displayed here.</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="image-box">Image Here</div>
+      <h3>Aero Smith Jr.</h3>
+    </div>
+
+    <div class="card">
+      <div class="image-box">Image Here</div>
+      <h3>Matthew</h3>
+    </div>
+
+    <div class="card">
+      <div class="image-box">Image Here</div>
+      <h3>Beatama</h3>
+    </div>
+
+    <div class="card">
+      <div class="image-box">Image Here</div>
+      <h3>Kingdom Maps</h3>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
