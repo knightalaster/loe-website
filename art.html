@@ -45,8 +45,17 @@
       margin-bottom:40px;
     }
 
-    /* GRID */
+    /* SECTION TITLE */
+    .section{
+      margin-top:60px;
+    }
 
+    .section h2{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    /* GALLERY GRID */
     .gallery{
       display:grid;
       grid-template-columns:repeat(auto-fill, minmax(160px, 1fr));
@@ -74,7 +83,6 @@
     }
 
     /* LIGHTBOX */
-
     #lightbox{
       position:fixed;
       top:0;
@@ -97,9 +105,8 @@
       max-width:90%;
       max-height:90%;
       border-radius:12px;
-      transform:scale(1);
-      transition:0.25s ease;
       position:absolute;
+      transition:0.25s;
     }
 
   </style>
@@ -115,22 +122,53 @@
 <div class="container">
 
   <h1>ART GALLERY</h1>
-  <p>LOE fanart collection</p>
+  <p>LOE visual archive</p>
 
-  <div class="gallery">
+  <!-- CHARACTERS -->
+  <div class="section">
+    <h2>Characters</h2>
 
-    <div class="img" onclick="openImage(0)">
-      <img src="Untitled263_20260419002946.png">
+    <div class="gallery">
+
+      <div class="img" onclick="openImage(0)">
+        <img src="aero.jpg">
+      </div>
+
+      <div class="img" onclick="openImage(1)">
+        <img src="matthew.jpg">
+      </div>
+
+      <div class="img" onclick="openImage(2)">
+        <img src="bitey.jpg">
+      </div>
+
     </div>
+  </div>
 
-    <div class="img" onclick="openImage(1)">
-      <img src="matthew.jpg">
+  <!-- MAPS -->
+  <div class="section">
+    <h2>Maps</h2>
+
+    <div class="gallery">
+
+      <div class="img"><img src="emerald_map.jpg"></div>
+      <div class="img"><img src="platinum_map.jpg"></div>
+      <div class="img"><img src="void_map.jpg"></div>
+
     </div>
+  </div>
 
-    <div class="img" onclick="openImage(2)">
-      <img src="bitey.jpg">
+  <!-- EYES -->
+  <div class="section">
+    <h2>Eyes</h2>
+
+    <div class="gallery">
+
+      <div class="img"><img src="original_eye.jpg"></div>
+      <div class="img"><img src="orb.jpg"></div>
+      <div class="img"><img src="virus_eye.jpg"></div>
+
     </div>
-
   </div>
 
 </div>
@@ -144,12 +182,7 @@
 
 let images = [];
 let currentIndex = 0;
-
-/* zoom + swipe state */
 let scale = 1;
-let startX = 0;
-let startY = 0;
-let startDistance = 0;
 
 window.onload = () => {
   document.querySelectorAll(".gallery img").forEach(img => {
@@ -157,7 +190,6 @@ window.onload = () => {
   });
 };
 
-/* OPEN */
 function openImage(index){
   currentIndex = index;
   scale = 1;
@@ -174,10 +206,8 @@ function openImage(index){
   }, 10);
 }
 
-/* CLOSE */
 function closeImage(){
   const lightbox = document.getElementById("lightbox");
-
   lightbox.style.opacity = "0";
 
   setTimeout(() => {
@@ -185,95 +215,32 @@ function closeImage(){
   }, 250);
 }
 
-/* SWIPE (touch) */
+/* swipe */
+let startX = 0;
+
 document.getElementById("lightbox").addEventListener("touchstart", e => {
-
-  if(e.touches.length === 1){
-    startX = e.touches[0].clientX;
-  }
-
-  /* PINCH START */
-  if(e.touches.length === 2){
-    startDistance = getDistance(e.touches);
-  }
-
+  startX = e.touches[0].clientX;
 });
 
-/* MOVE */
-document.getElementById("lightbox").addEventListener("touchmove", e => {
-
-  const img = document.getElementById("lightbox-img");
-
-  /* PINCH ZOOM */
-  if(e.touches.length === 2){
-    let newDistance = getDistance(e.touches);
-    let diff = newDistance / startDistance;
-
-    scale *= diff;
-    scale = Math.min(Math.max(0.8, scale), 3);
-
-    img.style.transform = `scale(${scale})`;
-
-    startDistance = newDistance;
-  }
-
-});
-
-/* SWIPE END */
 document.getElementById("lightbox").addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
 
-  if(e.changedTouches.length === 1){
-    let endX = e.changedTouches[0].clientX;
-
-    if(startX - endX > 50){
-      nextImage();
-    }
-
-    if(endX - startX > 50){
-      prevImage();
-    }
-  }
-
+  if(startX - endX > 50) nextImage();
+  if(endX - startX > 50) prevImage();
 });
 
-/* NEXT / PREV WITH ANIMATION */
 function nextImage(){
-  slideChange(1);
+  currentIndex = (currentIndex + 1) % images.length;
+  updateImage();
 }
 
 function prevImage(){
-  slideChange(-1);
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateImage();
 }
 
-function slideChange(dir){
-
-  const img = document.getElementById("lightbox-img");
-
-  img.style.transition = "0.2s";
-  img.style.transform = `translateX(${dir * -100}%) scale(${scale})`;
-
-  setTimeout(() => {
-
-    currentIndex = (currentIndex + dir + images.length) % images.length;
-
-    img.src = images[currentIndex];
-
-    img.style.transition = "0s";
-    img.style.transform = `translateX(${dir * 100}%) scale(${scale})`;
-
-    setTimeout(() => {
-      img.style.transition = "0.25s";
-      img.style.transform = `translateX(0px) scale(${scale})`;
-    }, 20);
-
-  }, 150);
-}
-
-/* helper for pinch */
-function getDistance(touches){
-  let dx = touches[0].clientX - touches[1].clientX;
-  let dy = touches[0].clientY - touches[1].clientY;
-  return Math.sqrt(dx*dx + dy*dy);
+function updateImage(){
+  document.getElementById("lightbox-img").src = images[currentIndex];
 }
 
 </script>
