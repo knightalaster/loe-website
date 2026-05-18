@@ -1,158 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>League Of Eye</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-  
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
   <style>
 
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#1b1f2b;
-  color:#f0f0f0;
-}
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#1b1f2b;
+      color:#f0f0f0;
+    }
 
-/* HEADER */
+    /* HEADER */
 
-header{
-  padding:20px;
-  background:#23283a;
-  border-bottom:1px solid #353b52;
-  position:sticky;
-  top:0;
-}
+    header{
+      background:#23283a;
+      border-bottom:1px solid #3a425c;
+      padding:20px 40px;
 
-/* NAVIGATION */
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
 
-nav{
-  display:flex;
-  gap:20px;
-}
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-a{
-  color:#ff7272;
-  text-decoration:none;
-  font-weight:bold;
-}
+    .logo{
+      font-family:'Orbitron', sans-serif;
+      font-size:28px;
+      color:#ffffff;
+      letter-spacing:3px;
+    }
 
-a:hover{
-  opacity:0.8;
-}
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
 
-/* HERO */
+    .nav-links a{
+      color:#ff7272;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.2s;
+    }
 
-.hero{
-  padding:100px 20px;
-  text-align:center;
-  background:linear-gradient(
-    to bottom,
-    #2a3045,
-    #1b1f2b
-  );
-}
+    .nav-links a:hover{
+      opacity:0.7;
+    }
 
-.hero h1{
-  font-family:'Orbitron', sans-serif;
-  font-size:70px;
-  margin-bottom:20px;
-  color:#ffffff;
-  letter-spacing:3px;
-}
+    /* HERO */
 
-/* SECTION */
+    .hero{
+      padding:140px 20px;
+      text-align:center;
 
-.section{
-  padding:60px 20px;
-  max-width:1000px;
-  margin:auto;
-}
+      background:
+      linear-gradient(
+        to bottom,
+        #2b3147,
+        #1b1f2b
+      );
+    }
 
-/* CARDS */
+    .hero h1{
+      font-family:'Orbitron', sans-serif;
+      font-size:90px;
+      margin-bottom:20px;
+      letter-spacing:5px;
+    }
 
-.card{
-  background:#2a3045;
-  border:1px solid #404963;
-  border-radius:24px;
-  padding:25px;
-  margin-top:20px;
-  transition:0.2s;
-}
+    .hero p{
+      max-width:800px;
+      margin:auto;
+      line-height:1.8;
+      color:#c9d0df;
+      font-size:18px;
+    }
 
-.card:hover{
-  transform:translateY(-3px);
-  border-color:#ff7272;
-  box-shadow:0 0 20px rgba(255,114,114,0.15);
-}
+    /* MAIN CONTAINER */
 
-/* TITLES */
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:60px 20px;
+    }
 
-h1,h2,h3{
-  color:#ffffff;
-}
+    /* SECTION */
 
-/* PARAGRAPHS */
+    .section{
+      margin-bottom:70px;
+    }
 
-p{
-  color:#d7dce8;
-  line-height:1.7;
-}
+    .section-title{
+      font-size:40px;
+      margin-bottom:25px;
+      color:#ffffff;
+    }
 
-/* FOOTER */
+    .section-sub{
+      color:#b8c0d6;
+      margin-bottom:30px;
+      line-height:1.7;
+    }
 
-footer{
-  padding:40px;
-  text-align:center;
-  color:#9aa3b5;
-}
+    /* CARDS */
+
+    .grid{
+      display:grid;
+      grid-template-columns:
+      repeat(auto-fit,minmax(260px,1fr));
+
+      gap:25px;
+    }
+
+    .card{
+      background:#2a3045;
+      border:1px solid #404963;
+      border-radius:25px;
+      padding:30px;
+      transition:0.2s;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      border-color:#ff7272;
+
+      box-shadow:
+      0 0 25px rgba(255,114,114,0.12);
+    }
+
+    .card h3{
+      margin-top:0;
+      color:#ffffff;
+      margin-bottom:15px;
+    }
+
+    .card p{
+      color:#d2d8e6;
+      line-height:1.7;
+    }
+
+    .card a{
+      display:inline-block;
+      margin-top:20px;
+      color:#ff7272;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    /* FEATURE SECTION */
+
+    .feature{
+      background:#23283a;
+      border:1px solid #39425c;
+      border-radius:30px;
+      padding:40px;
+    }
+
+    .feature h2{
+      font-size:45px;
+      margin-top:0;
+      margin-bottom:20px;
+    }
+
+    .feature p{
+      line-height:1.8;
+      color:#cbd2e0;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:50px;
+      text-align:center;
+      color:#99a3bb;
+      border-top:1px solid #353d56;
+      margin-top:50px;
+    }
 
   </style>
+
 </head>
 
 <body>
 
 <header>
+
   <nav>
-    <div>LOE</div>
-    <div>Alaster's</div>
-    <div>Official</div>
-    <div>Website</div>
+
+    <div class="logo">
+      LOE
+    </div>
+
+    <div class="nav-links">
+
+      <a href="characters.html">
+        Characters
+      </a>
+
+      <a href="art.html">
+        Art Gallery
+      </a>
+
+    </div>
+
   </nav>
+
 </header>
 
 <section class="hero">
-  <h1>LEAGUE OF EYE</h1>
-  <p>A reality-breaking universe built around Powerful Eyes and Omnipotent Orbs.</p>
+
+  <h1>
+    LEAGUE OF EYE
+  </h1>
+
+  <p>
+    A universe built around Original Eyes, Omnipotent Orbs,
+    kingdoms, reality-breaking powers, and conflicts spanning worlds.
+  </p>
+
 </section>
 
-<section class="section">
-  <h2>Characters</h2>
+<div class="container">
 
-  <div class="card">
-    <h3>Character Database</h3>
-    <p>View detailed information about LOE characters.</p>
+  <!-- WORLD SECTION -->
 
-    <a href="characters.html" style="color:#00ff99;">
-      Open Character Section →
-    </a>
+  <div class="section">
+
+    <div class="section-title">
+      The World
+    </div>
+
+    <div class="section-sub">
+      The foundations of the LOE universe.
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Original Eyes
+        </h3>
+
+        <p>
+          Occulites are born with Original Eyes capable of reality-breaking abilities.
+          Each Original Eye possesses one rule-defying power.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          Omnipotent Orbs
+        </h3>
+
+        <p>
+          Powerful eye fragments originating from the shattered Omnipotent Orb.
+          Incorrect fusion can destabilize reality itself.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>
+          The Virus
+        </h3>
+
+        <p>
+          A failed system designed to suppress dangerous Eye users that instead
+          drives infected users into bloodlust and violence.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
-</section>
-  
-<section class="section">
-  <h2>Art Gallery</h2>
 
-  <div class="card">
-    <h3>Enter Gallery</h3>
-    <p>View LOE characters, kingdoms, and comics in a separate page.</p>
-    <a href="art.html" style="color:#00ff99;">Open Gallery →</a>
+  <!-- CHARACTER SECTION -->
+
+  <div class="section">
+
+    <div class="feature">
+
+      <h2>
+        Character Archive
+      </h2>
+
+      <p>
+        Explore detailed records of individuals shaping the fate of worlds,
+        kingdoms, and reality itself.
+      </p>
+
+      <a href="characters.html">
+        Open Character Section →
+      </a>
+
+    </div>
+
   </div>
-</section>
+
+  <!-- ART SECTION -->
+
+  <div class="section">
+
+    <div class="feature">
+
+      <h2>
+        Art Gallery
+      </h2>
+
+      <p>
+        View LOE artwork, character illustrations,
+        comic pages, kingdom visuals, and more.
+      </p>
+
+      <a href="art.html">
+        Enter Gallery →
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
 
 <footer>
   League Of Eye Universe Archive
 </footer>
 
 </body>
+
 </html>
