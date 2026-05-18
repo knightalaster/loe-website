@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOE Manga</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#121522;
+      color:#eaeaea;
+    }
+
+    header{
+      text-align:center;
+      padding:60px 20px 30px;
+    }
+
+    h1{
+      font-size:50px;
+      margin:0;
+    }
+
+    p{
+      color:#aab3cc;
+      margin-top:10px;
+    }
+
+    .menu{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:20px;
+      max-width:800px;
+      margin:50px auto;
+      padding:0 20px;
+    }
+
+    .card{
+      background:#1c2235;
+      border:1px solid #2d3550;
+      border-radius:16px;
+      padding:30px;
+      text-align:center;
+      cursor:pointer;
+    }
+
+    .card:hover{
+      border-color:#ff7272;
+      transform:scale(1.03);
+      transition:0.2s;
+    }
+
+    .title{
+      font-size:20px;
+      font-weight:bold;
+    }
+
+    .desc{
+      font-size:13px;
+      color:#9aa4bf;
+      margin-top:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>LOE MANGA</h1>
+  <p>Select a chapter</p>
+</header>
+
+<div class="menu">
+
+  <div class="card" onclick="location.href='chapter1.html'">
+    <div class="title">Chapter 1</div>
+    <div class="desc">The beginning</div>
+  </div>
+
+  <div class="
