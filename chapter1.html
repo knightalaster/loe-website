@@ -61,6 +61,46 @@
     html{
   scroll-behavior:smooth;
     }
+
+    .navbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 30px;
+
+  background:rgba(10,10,15,0.85);
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid #242838;
+}
+
+.logo{
+  font-family:'Orbitron', sans-serif;
+  font-size:26px;
+  color:#ff4d4d;
+  letter-spacing:3px;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  color:#d6d9e5;
+  text-decoration:none;
+  transition:0.2s;
+  font-size:15px;
+}
+
+.nav-links a:hover{
+  color:#ff4d4d;
+}
   </style>
 </head>
 
