@@ -102,53 +102,6 @@
   color:#ff4d4d;
 }
 
-    .comments{
-  margin-top:60px;
-  padding:30px;
-  background:#161b28;
-  border:1px solid #2d3550;
-  border-radius:20px;
-}
-
-.comments h2{
-  margin-top:0;
-  margin-bottom:20px;
-}
-
-.comments textarea{
-  width:100%;
-  height:120px;
-  background:#0f111a;
-  border:1px solid #2d3550;
-  border-radius:12px;
-  color:white;
-  padding:15px;
-  resize:none;
-  font-size:15px;
-  margin-bottom:15px;
-}
-
-.comments button{
-  background:#ff7272;
-  border:none;
-  padding:12px 20px;
-  border-radius:10px;
-  color:white;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.comments button:hover{
-  opacity:0.85;
-}
-
-.comment{
-  margin-top:20px;
-  padding:15px;
-  background:#0f111a;
-  border-radius:12px;
-  border:1px solid #2d3550;
-}
   </style>
 </head>
 
@@ -166,46 +119,12 @@
     <img src="chapter1_3.jpg">
   </div>
 
-  <div class="comments">
-
-  <h2>Comments</h2>
-
-  <textarea placeholder="Write a comment..."></textarea>
-
-  <button onclick="postComment()">Post</button>
-
-  <div id="comment-list"></div>
-
-  </div>
   <div class="nav">
     <a class="btn" href="chapter2.html">Next Chapter →</a>
   </div>
 
 </div>
 
-  <script>
-
-function postComment(){
-
-  let textarea = document.querySelector(".comments textarea");
-
-  let text = textarea.value.trim();
-
-  if(text === "") return;
-
-  let comment = document.createElement("div");
-
-  comment.className = "comment";
-
-  comment.innerText = text;
-
-  document.getElementById("comment-list").prepend(comment);
-
-  textarea.value = "";
-
-}
-
-  </script>
 </body>
   <nav class="navbar">
 
